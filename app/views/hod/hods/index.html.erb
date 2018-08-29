@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Hod Hods</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Password hash</th>
+      <th>Password salt</th>
+      <th>Department</th>
+      <th>Sex</th>
+      <th>Phone</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @hod_hods.each do |hod_hod| %>
+      <tr>
+        <td><%= hod_hod.name %></td>
+        <td><%= hod_hod.email %></td>
+        <td><%= hod_hod.password_hash %></td>
+        <td><%= hod_hod.password_salt %></td>
+        <td><%= hod_hod.department_id %></td>
+        <td><%= hod_hod.sex %></td>
+        <td><%= hod_hod.phone %></td>
+        <td><%= link_to 'Show', hod_hod %></td>
+        <td><%= link_to 'Edit', edit_hod_hod_path(hod_hod) %></td>
+        <td><%= link_to 'Destroy', hod_hod, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Hod Hod', new_hod_hod_path %>

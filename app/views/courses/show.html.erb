@@ -1,0 +1,21 @@
+<h2><%= @page_title%></h2>
+<table class="table table-striped">
+	<tr>
+		<th>Module Code</th>
+		<th>Module Name</th>
+		<th>Department</th>
+		<th>Level</th>
+		<th>Credits</th>
+		<th>Lecturer</th>
+	</tr>
+	<% @courses.each do |course|%>
+	<tr>
+		<td><%= course.module_code %></td>
+		<td><%= course.module_name %></td>
+		<td><%= course.department.name %></td>
+		<td><%= course.level %></td>
+		<td><%= course.credit %></td>
+		<td><%= course.user.name %></td>
+	</tr>
+	<% end %>
+</table>

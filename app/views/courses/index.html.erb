@@ -1,0 +1,19 @@
+<h2><%= @page_title%></h2>
+<div class="row">
+  <div class="col-md-6 col-sm-6">
+      <table class="table table-striped">
+          <tr>
+            <th>Department</th>
+            <th>Level</th>
+            <th>Action</th>
+          </tr>
+          <% @courses.each do |course| %>
+          <tr>
+            <td><%= course.department.name %></td>
+            <td><%= course.level %></td>
+            <td><%= link_to 'show modules', course_path(course.level), class:'btn btn-primary' %></td>
+          </tr>
+          <% end %>
+      </table>
+    </div>
+</div>

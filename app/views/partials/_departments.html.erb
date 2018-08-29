@@ -1,0 +1,21 @@
+<% if params[:controller] == 'admin/results' %>
+    <div class="list-group">
+        <% @department.each do |department| %>
+          <%= link_to department.name, admin_department_path(department.id), class:'list-group-item' %>
+        <% end %>
+    </div>
+
+<% elsif params[:controller] == 'admin/courses'%>
+    <div class="list-group">
+        <% @department.each do |department| %>
+          <%= link_to department.name, admin_department_path(department.id), class:'list-group-item' %>
+        <% end %>
+    </div>
+
+<% elsif params[:controller] == 'admin/students'%>
+    <div class="list-group">
+        <% @department.each do |department| %>
+        <%= link_to department.name, admin_department_path(department.id), class:'list-group-item' %>
+        <% end %>
+    </div>
+<% end %>

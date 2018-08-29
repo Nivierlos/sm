@@ -1,0 +1,28 @@
+<% if @student.results.exists? %>
+  <table class="table table-striped">
+	<tr>
+		<th>Registration Number</th>
+		<% @student.results.each do |result|%>
+	    <th><%= result.course.module_code %></th>
+	    <% end %>
+		<th>Average</th>
+	</tr>
+	<% @student.results.each do |result|%>
+	<tr>
+		<td><%= result.student.reg_number%></td>
+		<% @student.results.each_slice(3) do |result|%>
+		  <% @student.results.each do |result|%>
+		    <td><%= result.marks%></td>
+		  <% end %>
+		<% end %>
+		<% average = 0%>
+		<% average += result.marks%>
+		
+		<td><%= average %></td>
+		
+	</tr>
+	<% end %>
+<% else %>
+  <p><h3>No resutls available now</h3></p>
+<% end %>
+

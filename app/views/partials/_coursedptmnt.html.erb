@@ -1,0 +1,22 @@
+      <h2 class="page-header">View Modules</h2>
+        <div id="books-index">
+
+          
+          <div class="row">
+              <div class="col-md-6 col-sm-6">
+                  <table class="table table-striped">
+                      <tr>
+                        <th>Department</th>
+                        <th>Level</th>
+                        <th>Action</th>
+                      </tr>
+                      <% @courses.each do |course| %>
+                      <tr>
+                        <td><%= @department.name %></td>
+                        <td><%= course.level %></td>
+                        <td><%= link_to 'show marks', admin_course_path(course), class:'btn btn-primary' %></td>
+                      </tr>
+                      <% end %>
+                  </table>
+              </div>
+        </div>

@@ -1,0 +1,13 @@
+<%= render  "partials/search", class:'pull-right'%>
+<%if params[:search]%>
+  <% if @students.exists? %>
+     <div class="list-group" >
+       <% @students.each do |student| %>
+         <%= link_to student.reg_number, student_path(student.id), class:'list-group-item' %>
+	   <% end %>
+     </div>  
+   <% else %>
+       <h3 style="color:#D00; text-align: center; text-size: 14px; margin-top: 20px; padding: 20px;"> Incorrect registration number </h3>
+      
+    <%end%>
+ <%end%>

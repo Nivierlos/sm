@@ -1,0 +1,23 @@
+
+      <h2 class="page-header">View Students</h2>
+        <div id="books-index">
+
+          
+          <div class="row">
+              <div class="col-md-6 col-sm-6">
+                  <table class="table table-striped">
+                      <tr>
+                        <th>Department</th>
+                        <th>Level</th>
+                        <th>Action</th>
+                      </tr>
+                      <% @students.each do |student| %>
+                      <tr>
+                        <td><%= @department.name %></td>
+                        <td><%= student.level %></td>
+                        <td><%= link_to 'show marks', admin_student_path(student), class:'btn btn-primary' %></td>
+                      </tr>
+                      <% end %>
+                  </table>
+              </div>
+        </div>

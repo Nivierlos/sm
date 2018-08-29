@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @hod_hod.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @hod_hod.email %>
+</p>
+
+<p>
+  <strong>Password hash:</strong>
+  <%= @hod_hod.password_hash %>
+</p>
+
+<p>
+  <strong>Password salt:</strong>
+  <%= @hod_hod.password_salt %>
+</p>
+
+<p>
+  <strong>Department:</strong>
+  <%= @hod_hod.department_id %>
+</p>
+
+<p>
+  <strong>Sex:</strong>
+  <%= @hod_hod.sex %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @hod_hod.phone %>
+</p>
+
+<%= link_to 'Edit', edit_hod_hod_path(@hod_hod) %> |
+<%= link_to 'Back', hod_hods_path %>

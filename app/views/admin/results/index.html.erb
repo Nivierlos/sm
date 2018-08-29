@@ -1,0 +1,12 @@
+<h2><%= @page_title%></h2>
+<%= link_to  "Add new", new_admin_result_path, class:'btn btn-success pull-right' %>
+<div class="row">
+  <div class="col-md-8">
+     <p class="jumbotron">Click on any department you want to see it's result</p>
+  </div>
+  <div class="col-md-4">
+    <%= render  "partials/departments" %>
+  </div>
+</div>
+
+  

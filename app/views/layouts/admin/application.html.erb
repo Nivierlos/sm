@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= @page_title ? @page_title : 'Welcome'%> | SMMIS</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-md navbar-default">
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item <%= params[:controller] == 'admin/students' ? 'active' : '' %>">
+            <%= link_to 'Students', admin_students_path, class:'nav-link' %>
+          </li>
+          <li class="nav-item <%= params[:controller] == 'admin/results' ? 'active' : '' %>">
+            <%= link_to 'Marks', admin_results_path, class:'nav-link' %>
+          </li>
+          <li class="nav-item <%= params[:controller] == 'admin/departments' ? 'active' : '' %>">
+            <%= link_to 'Departments', admin_departments_path, class:'nav-link' %>
+          </li>
+          <li class="nav-item <%= params[:controller] == 'admin/courses'? 'active' : '' %>">
+            <%= link_to 'Modules', admin_courses_path, class:'nav-link' %>
+            <li class="nav-item <%= params[:controller] == 'admin/users'? 'active' : '' %>">
+            <%= link_to 'Users', admin_users_path, class:'nav-link' %>
+
+        </ul>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="pull-right">
+         <% if current_user %>
+            Logged in as <%= current_user.name %>
+            <%= link_to 'Log out', admin_logout_path, data: {confirm: 'Do you want to logout?'} %>
+         <% end %>
+      </div>
+    	<% if flash[:notice] %>
+    	<div class="alert alert-info"><%= flash[:notice] %></div>
+    	<% end %>
+    	 <%= yield %>
+    </div>
+  </body>
+</html>

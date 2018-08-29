@@ -1,0 +1,21 @@
+<%= render  "partials/search", class:'pull-right'%>
+<%if params[:search]%>
+  <div class="list-group" >
+      <% @results.each do |result| %>
+    <% if @results.exists? %>
+
+        <%= link_to result.student_id, result_path(result.id), class:'list-group-item' %>
+      
+    <% else %>
+       <h3> check your registration number </h3>
+      
+    <%end%>
+         
+      <% end %>
+  </div>
+<% else %>
+  <p class="jumbotron">Enter your registration number in search box</p>
+<% end %>
+
+
+
